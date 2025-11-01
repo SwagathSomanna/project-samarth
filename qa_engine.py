@@ -1,9 +1,9 @@
 import pandas as pd
 import re
 
-rain = pd.read_csv("data/state_rainfall.csv")
-crops = pd.read_csv("data/crop_production.csv")
-temp = pd.read_csv("data/climate_temp.csv")
+rain = pd.read_csv("state_rainfall.csv")
+crops = pd.read_csv("crop_production.csv")
+temp = pd.read_csv("climate_temp.csv")
 
 STATES = sorted(set(rain['state'].unique().tolist() + crops['state'].unique().tolist() + temp['state'].unique().tolist()))
 
