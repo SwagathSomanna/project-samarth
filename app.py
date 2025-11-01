@@ -1,4 +1,59 @@
 import streamlit as st
+# --- Custom Page Setup ---
+page_bg = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background-color: #0b3d2e; /* bright blue */
+    background-image: linear-gradient(to bottom right, #2196f3, #0b3d2e);
+    color: #f1f8f5;
+}
+
+/* 🧭 Sidebar */
+[data-testid="stSidebar"] {
+    background-color: #0d4d38;
+    border-right: 1px solid #1a6b4a;
+}
+
+/* 📋 Headings and text */
+h1, h2, h3, h4, h5, h6 {
+    color: #e6ffee;
+    font-weight: 600;
+}
+p, label, span, div {
+    color: #e6ffee;
+}
+
+/* 🔘 Input boxes, text areas, and buttons */
+[data-baseweb="input"] > div, [data-baseweb="textarea"] > div {
+    background-color: lightblack;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #1c6f4b;
+}
+button[kind="primary"] {
+    background-color: #1f7a52 !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+    border: none !important;
+}
+button[kind="primary"]:hover {
+    background-color: #249e65 !important;
+}
+
+/* 🧩 Cards or containers */
+.stMarkdown, .stTextInput, .stButton, .stSelectbox {
+    background-color: rgba(13, 61, 45, 0.6);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/* Footer or small text */
+footer {
+    visibility: hidden;
+}
+</style>
+"""
+st.markdown(page_bg,unsafe_allow_html=True)
 from qa_engine import answer_question, STATES
 import matplotlib.pyplot as plt
 
